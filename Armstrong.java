@@ -1,28 +1,24 @@
 package com.company;
 
-import java.util.Scanner; //importing Scanner
+import java.util.Scanner;
 
 public class Armstrong {
-
     public static void main(String[] args) {
-//Armstrong Number
-
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter any number:"); //input a number
-        int n = input.nextInt();
-        int n1 = n;
+    Scanner sc = new Scanner(System.in);      //taking input from user
+        System.out.println(" Enter a number:");
+        int a = sc.nextInt();
+        int b = a;
         int sum = 0;
-        while (n > 0) {
-            int digit = n % 10;
-            int cube = digit * digit * digit;
-            sum = sum + cube;
-            n = n / 10;
-        }
-        if (sum == n1) {
-            System.out.println("Number is an armstrong number");
+        while (a > 0){
+            int digit = a % 10;
+            int cube = digit * digit * digit;    //cube of each digit
+            sum += cube;
+            a /= 10;
+        }                            //end of  loop
+        if(sum == b) {
+            System.out.println("Number is an Armstrong Number");
         } else {
-            System.out.println("Number is not an armstrong number");
+            System.out.println("Number not armstrong");
         }
-
     }
 }
